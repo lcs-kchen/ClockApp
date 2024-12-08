@@ -11,13 +11,29 @@ struct AlarmsView: View {
     var body: some View {
         NavigationStack {
             VStack{
+                HStack{
+                    Image(systemName: "bed.double")
+                    Text("Sleep|Wakeup")
+                    Spacer()
+                    
+                    
+                }
+                HStack {
+                    Text("No Alarm")
+                    Spacer()
+                    Button(action: {}) {
+                     Text("SET UP")
+                            .padding()
+                     .foregroundStyle(.orange)
+                     .background(Color.gray, in: Capsule())
+                     }
+                }
                 AlarmTime(time: "7:30", AMorPM: "AM")
                 AlarmTime(time: "8:15", AMorPM: "AM")
                 AlarmTime(time: "9:00", AMorPM: "AM")
                 AlarmTime(time: "9:00", AMorPM: "AM")
             }
-                .navigationTitle("Alarms")
-                            
+            .navigationTitle("Alarms")
             .toolbar {
                 
                 ToolbarItem(placement: .topBarLeading) {
@@ -36,46 +52,17 @@ struct AlarmsView: View {
                         Image(systemName: "plus")
                     }
                 }
+                
                     
                     
                 }
             }
-        }
+        Spacer()
+    }
     }
     
     #Preview {
         LandingView()
     }
     
-    struct AlarmTime: View {
-        
-        //Stored properties
-        let time: String
-        let AMorPM: String
-        
-        
-        
-        var body: some View {
-            
-            VStack{
-                HStack {
-                    //Left side
-                    Text(time)
-                        .font(.system(size: 64.0, weight: .thin, design: .default))
-                    Text(AMorPM)
-                        .font(.system(.largeTitle, design: .default, weight: .thin))
-                    
-                    Spacer()
-                    
-                    //Right side
-                    Toggle("", isOn: Binding.constant(true))
-                }
-                HStack {
-                    Text("Alarm")
-                    Spacer()
-                }
-                
-            }
-            .padding()
-        }
-    }
+    
