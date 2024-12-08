@@ -16,10 +16,10 @@ struct AlarmsView: View {
                     Text("Sleep|Wakeup")
                     Spacer()
                     
-                    
                 }
                 HStack {
                     Text("No Alarm")
+                        .foregroundStyle(.gray)
                     Spacer()
                     Button(action: {}) {
                      Text("SET UP")
@@ -27,6 +27,10 @@ struct AlarmsView: View {
                      .foregroundStyle(.orange)
                      .background(Color.gray, in: Capsule())
                      }
+                }
+                HStack {
+                    Text("Other")
+                    Spacer()
                 }
                 AlarmTime(time: "7:30", AMorPM: "AM")
                 AlarmTime(time: "8:15", AMorPM: "AM")
@@ -57,8 +61,8 @@ struct AlarmsView: View {
                     
                 }
             }
-        Spacer()
-    }
+        
+        }
     }
     
     #Preview {
